@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Distribuidora Morning</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5/github-markdown.min.css">
+<style>
+  html,body{margin:0;background:#0d1117;}
+  .markdown-body{box-sizing:border-box;max-width:900px;margin:0 auto;padding:45px 40px;background:#fff;min-height:100vh;}
+  @media (max-width:767px){.markdown-body{padding:18px;}}
+  .topbar{max-width:900px;margin:0 auto;padding:14px 40px;color:#8b949e;font:14px/1.4 -apple-system,Segoe UI,Roboto,sans-serif;}
+  .topbar a{color:#58a6ff;text-decoration:none;}
+  .alert{padding:12px 16px;border-left:6px solid;border-radius:6px;margin:16px 0;}
+  .alert .alert-title{margin:0 0 6px;font-weight:700;}
+  .alert.note{border-color:#539bf5;background:#ddf4ff;}
+  .alert.tip{border-color:#3fb950;background:#dafbe1;}
+  .alert.important{border-color:#986ee2;background:#fbefff;}
+  .alert.warning{border-color:#d29922;background:#fff8c5;}
+  .alert.caution{border-color:#f85149;background:#ffebe9;}
+</style>
+</head>
+<body>
+<div class="topbar">Distribuidora Morning · <a href="./">Inicio</a> · <a href="https://github.com/FranzSavant/distribuidora-morning">repo</a></div>
+<article class="markdown-body" id="content">Cargando…</article>
+<script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+<script>
+(async function(){
+  const el = document.getElementById('content');
+  try{
+    const url = new URL('README.md', location.href);
+    const res = await fetch(url, {cache:'no-cache'});
+    const md = await res.text();
+    el.innerHTML = marked.parse(md);
+  }catch(e){ el.textContent = 'No se pudo cargar el contenido: ' + e; return; }
+  const types = {NOTE:'note',TIP:'tip',IMPORTANT:'important',WARNING:'warning',CAUTION:'caution'};
+  el.querySelectorAll('blockquote').forEach(function(bq){
+    const m = (bq.textContent||'').match(/^\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*/);
+    if(!m) return;
+    const type = types[m[1]];
+    const first = bq.querySelector('p');
+    if(first) first.innerHTML = first.innerHTML.replace(/^\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*/, '');
+    const div = document.createElement('div');
+    div.className = 'alert ' + type;
+    const t = document.createElement('p');
+    t.className = 'alert-title';
+    t.textContent = m[1].charAt(0) + m[1].slice(1).toLowerCase();
+    div.appendChild(t);
+    while(bq.firstChild){ div.appendChild(bq.firstChild); }
+    bq.replaceWith(div);
+  });
+})();
+</script>
+</body>
+</html>
