@@ -1,0 +1,10 @@
+# Archivos temporales / del sistema
+Thumbs.db
+desktop.ini
+*.tmp
+~$*
+.DS_Store
+
+# Planillas abiertas
+~$*.xlsx
+~$*.csv
