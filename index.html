@@ -6,18 +6,30 @@
 <title>Distribuidora Morning</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5/github-markdown.min.css">
 <style>
-  html,body{margin:0;background:#0d1117;}
-  .markdown-body{box-sizing:border-box;max-width:900px;margin:0 auto;padding:45px 40px;background:#fff;min-height:100vh;}
+  :root{color-scheme:light dark;}
+  body{margin:0;background:#ffffff;}
+  .markdown-body{box-sizing:border-box;max-width:900px;margin:0 auto;padding:45px 40px;min-height:100vh;}
   @media (max-width:767px){.markdown-body{padding:18px;}}
-  .topbar{max-width:900px;margin:0 auto;padding:14px 40px;color:#8b949e;font:14px/1.4 -apple-system,Segoe UI,Roboto,sans-serif;}
-  .topbar a{color:#58a6ff;text-decoration:none;}
+  .topbar{max-width:900px;margin:0 auto;padding:14px 40px;font:14px/1.4 -apple-system,Segoe UI,Roboto,sans-serif;color:#57606a;background:#ffffff;}
+  .topbar a{color:#0969da;text-decoration:none;}
+  .topbar a:hover{text-decoration:underline;}
   .alert{padding:12px 16px;border-left:6px solid;border-radius:6px;margin:16px 0;}
   .alert .alert-title{margin:0 0 6px;font-weight:700;}
-  .alert.note{border-color:#539bf5;background:#ddf4ff;}
-  .alert.tip{border-color:#3fb950;background:#dafbe1;}
-  .alert.important{border-color:#986ee2;background:#fbefff;}
-  .alert.warning{border-color:#d29922;background:#fff8c5;}
-  .alert.caution{border-color:#f85149;background:#ffebe9;}
+  .alert.note{border-color:#0969da;background:#ddf4ff;}
+  .alert.tip{border-color:#1a7f37;background:#dafbe1;}
+  .alert.important{border-color:#8250df;background:#fbefff;}
+  .alert.warning{border-color:#9a6700;background:#fff8c5;}
+  .alert.caution{border-color:#cf222e;background:#ffebe9;}
+  @media (prefers-color-scheme: dark){
+    body{background:#0d1117;}
+    .topbar{color:#8b949e;background:#0d1117;}
+    .topbar a{color:#4493f8;}
+    .alert.note{border-color:#4493f8;background:rgba(56,139,253,.15);}
+    .alert.tip{border-color:#3fb950;background:rgba(46,160,67,.15);}
+    .alert.important{border-color:#a371f7;background:rgba(163,113,247,.15);}
+    .alert.warning{border-color:#d29922;background:rgba(187,128,9,.15);}
+    .alert.caution{border-color:#f85149;background:rgba(248,81,73,.15);}
+  }
 </style>
 </head>
 <body>
