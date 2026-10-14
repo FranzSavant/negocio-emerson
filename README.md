@@ -4,6 +4,8 @@
 
 Este repositorio es el tablero del proyecto: **proveedores, productos candidatos y precios** y —a medida que avance— **clientes, compras y volúmenes**.
 
+🌐 **Enlace público (para compartir):** <https://franzsavant.github.io/distribuidora-morning/>
+
 *Última actualización: 2026-10-14.*
 
 ---
