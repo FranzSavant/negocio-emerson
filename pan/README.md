@@ -1,6 +1,6 @@
 # Automatizar la venta de pan
 
-> Proyecto del activo [Negocio Emerson](../README.md). Mi rol acá es **asesor**: ayudo a automatizar la venta de pan, no soy socio.
+> Mi rol acá es **asesor**: ayudo a automatizar la venta de pan, no soy socio.
 
 ## Objetivo
 
